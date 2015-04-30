@@ -10,21 +10,25 @@
           content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"/>
     <link rel="stylesheet" type="text/css" href="css/index.css"/>
     <link rel="stylesheet" type="text/css" href="css/ionic.css"/>
-    <title>Hello World</title>
+    <title>Cordova自定义插件示例</title>
 </head>
 <body>
 <div>
-    <h1 class="button button-full button-positive">Cordova自定义插件示例</h1>
-    <div class="row " >
-    </div>
 
-    <div class="row"  id="deviceready" style="margin-top: 20px;" >
+    <div class="bar bar-header  bar-positive">
+        <h1 class="title" style="font-size:30px">Cordova自定义插件示例</h1>
+    </div>
+    <div class="row " style="margin-top: 30px">
+    </div>
+    <div class="row" id="deviceready" style="margin-top: 20px;">
         <div class="col" style="margin-left: 20px;margin-right: 20px">
-            <button class="button button-full button-calm" onclick="alert()">
-                官方插件测试</button>
-            <button class="button button-full button-balanced" onclick="plugtest2()">
-                官方播件示例吐丝</button>
-            <button class="button button-full button-energized " onclick="plugtest()">
+            <button class="button button-full button-calm"style="font-size:25px" onclick="alert()" >
+                官方插件测试
+            </button>
+            <button class="button button-full button-balanced" style="font-size:25px" onclick="plugtest2()">
+                官方播件示例吐丝
+            </button>
+            <button class="button button-full button-energized " style="font-size:25px"onclick="plugtest()">
                 自定义吐丝插件测试
             </button>
             <button class="button button-full button-balanced">
