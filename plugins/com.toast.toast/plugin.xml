@@ -1,35 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--TODO 域名空间和 ID  版本号 注意，Codova 在构建项目时会根据这个ID生成插件目录，-->
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        id="com.toast.toast.Toast"
+        id="com.toast.toast"
         version="1.5.2">
 
-
-    <name>Toast</name>
-    <description>Toast for cordova plugin</description>
-    <author>Toast</author>
-    <keywords>Toast</keywords>
-    <license>Apache 2.0 License</license>
-
+    <name>Toast</name><!--插件名-->
+    <description>Toast for cordova plugin</description><!--插件描述-->
+    <author>Toast</author><!--作者-->
+    <keywords>Toast</keywords><!--关键字-->
+    <license>Apache 2.0 License</license><!--许可-->
     <engines>
         <engine name="cordova" version=">=3.0"/>
     </engines>
-
-    <!-- android -->
+    <!-- TODO android 平台的配置-->
     <platform name="android">
-
         <js-module src="www/toast.js" name="toast">
-            <merges target="window.plugins.Toast" />
+            <!--TODO  这里是在JS中调该插件的前缀-->
+            <merges target="window.plugins" />
         </js-module>
-
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="ToastPlugin">
+                <!--TODO 插件的完整类路径-->
                 <param name="android-package" value="com.toast.toast.ToastPlugin"/>
             </feature>
         </config-file>
-
+        <!--TODO Java 本地代码映射，由两部分组成，前面是在插件文件中的路径，后面是将要生成的JAVA源码的包路径名，src +插件的包名com.toast.toast -->
         <source-file src="src/android/ToastPlugin.java" target-dir="src/com/toast/toast"/>
-
     </platform>
 
 </plugin>

@@ -6,7 +6,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import android.util.Log;
 import android.widget.Toast;
-
 public class ToastPlugin extends CordovaPlugin {
     public static String TOAST = "Toast";
     public boolean execute(String action, JSONArray data,

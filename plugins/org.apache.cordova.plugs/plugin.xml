@@ -1,14 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <plugin
-      version="0.3.0">
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="org.apache.cordova.plugs"
+        version="0.3.0">
+    <!--TODO 域名空间，插件ID,版本号 cordova 将根据 ID生成 plugins 下的目录结构 -->
+    <name>插件名</name><!--插件名-->
+    <description>插件描述</description><!--插件描述-->
+    <author>longtaoge</author><!--作者-->
+    <keywords>Toast,吐丝</keywords><!--关键字-->
+    <license>Apache 2.0 License</license><!--许可协议-->
+    <engines>
+        <engine name="cordova" version=">=3.0"/>
+        <!--支持的引擎及版本号-->
+    </engines>
+    <!-- TODO android 平台的配置-->
+    <platform name="android">
+        <js-module src="www/echo.js" name="echo">
+            <!--TODO  这里是在JS中调该插件的前缀-->
+            <merges target="echo" />
+        </js-module>
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Echo">
+                <!--TODO 插件的完整类路径-->
+                <param name="android-package" value="org.apache.cordova.plugs.Echo"/>
+            </feature>
+        </config-file>
+        <!--TODO Java 本地代码映射，由两部分组成，前面是在插件文件中的路径，后面是将要生成的JAVA源码的包路径名，src +插件的包名com.toast.toast -->
+        <source-file src="src/android/Echo.java" target-dir="src/org/apache/cordova/plugs"/>
+    </platform>
+
+
+
+
+
+
+
+
 
 
     <js-module src="www/echo.js" name="echo">
         <merges target="navigator.notification" />
     </js-module>
-
-
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
@@ -16,26 +49,10 @@
                 <param name="android-package" value="org.apache.cordova.plugs.Echo" />
             </feature>
         </config-file>
-
-
         <js-module src="www/echo.js" name="echo">
             <clobbers target="navigator.notification"/>
         </js-module>
-
-
         <source-file src="src/android/Echo.java" target-dir="src/android/"/>
-
-
-
-
-
-
-
-
-
     </platform>
-
-
-
-
 </plugin>
+

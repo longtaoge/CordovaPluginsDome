@@ -29,29 +29,27 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
 
 
-        showTost= function () {      alert("test");
+        alert= function () {
+            //TODO 这里调用的是官方提供的对话框
             navigator.notification.alert(
                 '这是一个对话框',  // message
                 null,         // callback
                 '对话框',            // title
                 '确认'                  // buttonName
             );
-
-
         };
 
         plugtest=function(){
-            alert("自定义插件测试开始");
-            window.plugins.Toast.ShowToast("teeeeeeee",1);
-            alert("自定义插件测试结束");
+            window.plugins.ShowToast("自定义吐丝插件",1);
+        };
 
+        plugtest2=function(){
+            echo.echo("测试","插件","信息");
 
 
         }
-
     },
-    // deviceready Event Handler
-    //
+    // deviceready Event Handl
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {

@@ -13,8 +13,9 @@ public class Echo extends CordovaPlugin
         throws JSONException
     {
         if (action.equals("echo"))
-        {
-            String message = args.getString(0);
+        { //根据action 选择要执行的方法
+            String message = args.getString(0)+args.getString(1)+args.getString(2);
+            //执行方法
             this.echo(message, callbackContext);
             return true;
         }
@@ -23,14 +24,16 @@ public class Echo extends CordovaPlugin
     
     private void echo(String message, CallbackContext callbackContext)
     {
-        Toast.makeText(this.cordova.getActivity(),"",Toast.LENGTH_LONG).show();
+
 
         if (message != null && message.length() > 0)
         {
             callbackContext.success(message);
+             Toast.makeText(this.cordova.getActivity(),message,Toast.LENGTH_LONG).show();
         }
         else
         {
+          Toast.makeText(this.cordova.getActivity(),"消息为空",Toast.LENGTH_LONG).show();
             callbackContext.error("Expected one non-empty string argument.");
         }
         
