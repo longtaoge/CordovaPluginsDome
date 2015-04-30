@@ -12,6 +12,7 @@ public class ToastPlugin extends CordovaPlugin {
     public boolean execute(String action, JSONArray data,
             CallbackContext callbackContext) throws JSONException {
         if (TOAST.equals(action)) {
+        //如果传过来的参数是 Toast 执行此方法
             Log.i(TOAST, "message:"+data.getString(0)+",length:"+data.getInt(1));
             toast(data.getString(0), data.getInt(1), callbackContext);
         }

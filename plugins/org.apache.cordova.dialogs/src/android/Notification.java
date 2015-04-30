@@ -79,8 +79,6 @@ public class Notification extends CordovaPlugin {
             this.beep(args.getLong(0));
         }
         else if (action.equals("alert")) {
-          final CordovaInterface cordova = this.cordova;
-           Toast.makeText(cordova.getActivity(), "eeeee",0).show();
            this.alert(args.getString(0), args.getString(1), args.getString(2), callbackContext);
             return true;
         }
