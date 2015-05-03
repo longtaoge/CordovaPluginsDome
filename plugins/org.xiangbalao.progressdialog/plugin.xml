@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="org.xiangbalao.progressdialog"
+        version="0.1.0">
+    <!--TODO 域名空间，插件ID,版本号 cordova 将根据 ID生成 plugins 下的目录结构 -->
+    <name>进度条</name><!--插件名-->
+    <description>加载动画</description><!--插件描述-->
+    <author>longtaoge</author><!--作者-->
+    <keywords>progress</keywords><!--关键字-->
+    <license>Apache 2.0 License</license><!--许可协议-->
+    <engines>
+        <engine name="cordova" version=">=3.0"/>
+        <!--支持的引擎及版本号-->
+    </engines>
+    <!-- TODO android 平台的配置-->
+    <platform name="android">
+        <js-module src="www/progrress_dialog.js" name="progrress_dialog">
+            <!--TODO  这里是在JS中调该插件的前缀-->
+            <merges target="xiangbalao" />
+        </js-module>
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="ProgressDialogPlugin">
+                <!--TODO 插件的完整类路径-->
+                <param name="android-package" value="org.xiangbalao.progressdialog.ProgressDialogPlugin"/>
+            </feature>
+        </config-file>
+        <!--TODO Java 本地代码映射，由两部分组成，前面是在插件文件中的路径，后面是将要生成的JAVA源码的包路径名，src +插件的包名com.toast.toast -->
+        <source-file src="src/android/ProgressDialogPlugin.java" target-dir="src/org/xiangbalao/progressdialog"/>
+        <source-file src="src/android/ProgressDialog.java" target-dir="src/org/xiangbalao/progressdialog"/>
+        <source-file src="src/android/pageload_icon1.png" target-dir="res/drawable-hdpi"/>
+        <source-file src="src/android/pageload_icon2.png" target-dir="res/drawable-hdpi"/>
+        <source-file src="src/android/styles.xml" target-dir="res/values"/>
+        <source-file src="src/android/progress_round2.xml" target-dir="res/anim"/>
+        <source-file src="src/android/customprogressdialog.xml" target-dir="res/layout"/>
+
+    </platform>
+
+
+</plugin>
+

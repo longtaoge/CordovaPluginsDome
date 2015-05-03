@@ -47,7 +47,22 @@ var app = {
             echo.echo("测试","插件","信息");
 
 
-        }
+        };
+
+        showprogress_dialog=function(){
+
+            xiangbalao.showdalog("正在加载数据***");
+
+        };
+
+        close_dalog=function(){
+
+            xiangbalao.closedalog();
+
+        };
+
+
+
     },
     // deviceready Event Handl
     // The scope of 'this' is the event. In order to call the 'receivedEvent'

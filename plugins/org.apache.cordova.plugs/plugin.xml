@@ -33,12 +33,6 @@
 
 
 
-
-
-
-
-
-
     <js-module src="www/echo.js" name="echo">
         <merges target="navigator.notification" />
     </js-module>
