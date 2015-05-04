@@ -41,7 +41,7 @@ Cordova 会创建一个带CordovaLib （Library项目） 的 Android 项目，�
 　　Java 代码可以直接在生成的项目中编写，也可以新创建一个单独的工程，这里我新创建一个Android 工程,目录结构如下：
 
 
-![](https://github.com/longtaoge/CordovaPluginsDome/blob/master/cordova_image/cordovaplgin3png)
+![](https://github.com/longtaoge/CordovaPluginsDome/blob/master/cordova_image/cordovaplgin3.png)
 
 ##### 1新建ProgressDialogPlugin 类，继承CordovaPlugin #####
 
