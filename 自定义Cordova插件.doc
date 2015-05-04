@@ -1,0 +1,129 @@
+自定义Cordova插件
+
+第一步编写JAVA代码
+1命令行新建 项目
+例如：
+
+1 cordova create plugins  org.apache.cordova.plugs  plugins
+
+2 cd  plugins
+
+3 cordova platform add android
+
+Cordova 会创建一个带CordovaLib （Library项目） 的 Android 项目，这个就是Cordova的库
+
+文件，插件的开发基于这个Library
+
+
+
+
+2将项目导入eclispe 得到两个工程，展开工程目录如下：
+
+
+其中，第一个工程MainActivity-CordovaLib就是我们要用的Library 
+第二个工程plugins 是一个依赖MainActivity-CordovaLib 的Android 项目
+
+
+3编写Android平台的 JAVA代码插件
+　　　Java 代码可以直接在生成的项目中编写，也可以新创建一个单独的工程，这里我新创建一个Android 工程,目录结构如下：
+　　　
+　　　
+
+
+
+
+
+1新建ProgressDialogPlugin 类，继承CordovaPlugin
+  CordovaPlugin 是Cordova 的js桥，必须继承这个类，
+
+2 重写继承自 CordovaPlugin的方法
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　这里action 参数是指要执行的方法名，
+　　　args 是在JS中传递过来的字符品参数数组
+　　　showProgerss()和 closeProgress();是我们根据action 要选择执行的方法
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　
+　　　这里的MainActivity仅时为了测试插件代码，并不打包到插件中去。需要说明的是，一般情况下，插件不要带资源文件，因为资源文件会涉及到R文件的导入问题，在插件使用时，需要使用插件时手动导入R资源
+
+
+
+第二步编写js代码
+用前端编辑工具打开刚才创建的Cordova项目， 我这里是用的WebStorm 目录结构如下：
+
+
+
+
+
+
+第三步配置plugin.xml

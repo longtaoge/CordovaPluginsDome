@@ -55,7 +55,11 @@ public class ProgressDialogPlugin extends CordovaPlugin
     private void showProgerss()
     {
         
-        dialog = ProgressDialog.createDialog(this.cordova.getActivity());
+          if (dialog==null)
+               {
+                   dialog = ProgressDialog.createDialog(this.cordova.getActivity());
+               }
+
         
         dialog.setMessage(content);
         if (!dialog.isShowing())
