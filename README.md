@@ -11,8 +11,18 @@ CordovaPluginsDome
 
 ### 使用方法 ###
 
-     cordova plugin add  https://github.com/longtaoge/CodovaProgressDialog.git
-   
+    1 cordova plugin add  https://github.com/longtaoge/CodovaProgressDialog.git
+
+    2 将 import org.apache.cordova.plugs.R; 
+	   修改为 AndroidManifest.xml 中的 package="xx.xxx.xxxxxx.xxx" 包名
+       例如 package="org.apache.cordova.plugs" 则改为 import  org.apache.cordova.plugs.R;
+
+
+      xiangbalao.showdalog("正在加载数据...");    //打开进度条
+      xiangbalao.closedalog();     //关闭进度条
+
+
+
 ### 第一步编写JAVA代码 ###
 
 #### 1命令行新建 项目 ####
