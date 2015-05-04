@@ -51,7 +51,7 @@ var app = {
 
         showprogress_dialog=function(){
 
-            xiangbalao.showdalog("正在加载数据***");
+            xiangbalao.showdalog("正在加载数据...");
 
         };
 

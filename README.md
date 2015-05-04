@@ -9,6 +9,10 @@ CordovaPluginsDome
 #### 项目源码地址： ####
 [https://github.com/longtaoge/CordovaPluginsDome/tree/master](https://github.com/longtaoge/CordovaPluginsDome/tree/master "项目源码地址")
 
+### 使用方法 ###
+
+     cordova plugin add  https://github.com/longtaoge/CodovaProgressDialog.git
+   
 ### 第一步编写JAVA代码 ###
 
 #### 1命令行新建 项目 ####
