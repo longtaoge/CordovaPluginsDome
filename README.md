@@ -230,6 +230,56 @@ js 文件必须改入相应的依赖模块，并且重写
 
 
 
+### 第四步发布 ###
+
+#### 1发布到 github ####
+
+在github 上创建仓库，将 代码提交到git仓库即可
+
+ 目录结构如下
+
+![](https://github.com/longtaoge/CordovaPluginsDome/blob/master/cordova_image/cordovaplgin7.png)
+
+#### 2发布到本地 ####
+
+新建文件夹，将三部分代码拷贝到要发布的目录即可
+
+目录结构如下
+
+![](https://github.com/longtaoge/CordovaPluginsDome/blob/master/cordova_image/cordovaplgin8.png)
+
+
+### 第五步使用 ###
+
+#### 1远程仓库 ####
+
+
+
+    1 cordova plugin add  https://github.com/longtaoge/PluginProgressDialog_Ionic.git
+
+    这里 https://github.com/longtaoge/PluginProgressDialog_Ionic.git 是仓库地址
+    2 如果插件用到了资源文件 将 import org.apache.cordova.plugs.R; 
+      修改为 AndroidManifest.xml 中的 package="xx.xxx.xxxxxx.xxx" 包名   例如 package="org.apache.cordova.plugs" 
+      则改为 import  org.apache.cordova.plugs.R;3 方法调用，例如：  xiangbalao.showdalog("正在加载数据...");    //打开进度条
+      xiangbalao.closedalog();     //关闭进度条
+
+    这里的  xiangbalao 前缀是指在plugin.xml中配置的参数   方法名是 js文件中提供的方法
+    <js-module   src="www/progrress_dialog.js" name="progrress_dialog">
+             <merges target="xiangbalao" />   这里是在JS中调该插件的前缀
+     </js-module>
+
+
+#### 2本地仓库 ####
+
+    cordova plugin add  F:\my_plugindir    //这里是指插件本地路径
+
+
+使用方法同上.
+
+
+
+
+
 #### 示例项目源码地址： ####
 [https://github.com/longtaoge/CordovaPluginsDome/tree/master](https://github.com/longtaoge/CordovaPluginsDome/tree/master "项目源码地址")
 
