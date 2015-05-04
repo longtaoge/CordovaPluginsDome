@@ -6,21 +6,6 @@ CordovaPluginsDome
 
 ## 自定义Cordova插件 ##
 
-#### 项目源码地址： ####
-[https://github.com/longtaoge/CordovaPluginsDome/tree/master](https://github.com/longtaoge/CordovaPluginsDome/tree/master "项目源码地址")
-
-### 使用方法 ###
-
-    1 cordova plugin add  https://github.com/longtaoge/CodovaProgressDialog.git
-
-    2 将 import org.apache.cordova.plugs.R; 
-	   修改为 AndroidManifest.xml 中的 package="xx.xxx.xxxxxx.xxx" 包名
-       例如 package="org.apache.cordova.plugs" 则改为 import  org.apache.cordova.plugs.R;
-
-
-      xiangbalao.showdalog("正在加载数据...");    //打开进度条
-      xiangbalao.closedalog();     //关闭进度条
-
 
 
 ### 第一步编写JAVA代码 ###
@@ -243,3 +228,19 @@ js 文件必须改入相应的依赖模块，并且重写
     </platform>
 </plugin>
 
+
+
+#### 示例项目源码地址： ####
+[https://github.com/longtaoge/CordovaPluginsDome/tree/master](https://github.com/longtaoge/CordovaPluginsDome/tree/master "项目源码地址")
+
+### 示例使用方法 ###
+
+    1 cordova plugin add  https://github.com/longtaoge/CodovaProgressDialog.git
+
+    2 将 import org.apache.cordova.plugs.R; 
+	   修改为 AndroidManifest.xml 中的 package="xx.xxx.xxxxxx.xxx" 包名
+       例如 package="org.apache.cordova.plugs" 则改为 import  org.apache.cordova.plugs.R;
+
+    3 提供的方法
+      xiangbalao.showdalog("正在加载数据...");    //打开进度条
+      xiangbalao.closedalog();     //关闭进度条
