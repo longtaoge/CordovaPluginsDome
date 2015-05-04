@@ -23,7 +23,6 @@ CordovaPluginsDome
 
 
 
-
 Cordova 会创建一个带CordovaLib （Library项目） 的 Android 项目，这个就是Cordova的库
 
 文件，插件的开发基于这个Library
