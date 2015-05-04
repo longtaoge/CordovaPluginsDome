@@ -25,11 +25,15 @@ Cordova 会创建一个带CordovaLib （Library项目） 的 Android 项目，�
 
 文件，插件的开发基于这个Library
 
+![](https://github.com/longtaoge/CordovaPluginsDome/blob/master/cordova_image/cordovaplgin1.png)
+
 #### 2将项目导入eclispe 得到两个工程，展开工程目录如下： ####
 
+![](https://github.com/longtaoge/CordovaPluginsDome/blob/master/cordova_image/cordovaplgin2.png)
 
-其中，第一个工程MainActivity-CordovaLib就是我们要用的Library
-第二个工程plugins 是一个依赖MainActivity-CordovaLib 的Android 项目
+
+   其中，第一个工程MainActivity-CordovaLib就是我们要用的Library
+  第二个工程plugins 是一个依赖MainActivity-CordovaLib 的Android 项目
 
 #### 3编写Android平台的 JAVA代码插件 ####
 
@@ -37,16 +41,70 @@ Cordova 会创建一个带CordovaLib （Library项目） 的 Android 项目，�
 　　Java 代码可以直接在生成的项目中编写，也可以新创建一个单独的工程，这里我新创建一个Android 工程,目录结构如下：
 
 
+![](https://github.com/longtaoge/CordovaPluginsDome/blob/master/cordova_image/cordovaplgin3png)
+
 ##### 1新建ProgressDialogPlugin 类，继承CordovaPlugin #####
 
   CordovaPlugin 是Cordova 的js桥，必须继承这个类，
 ##### 2 重写继承自 CordovaPlugin的方法 #####
 
+      @Override
+    public boolean execute(String action, JSONArray args, CallbackContext callbackContext)
+        throws JSONException
+    {
+
+        if (args.getString(0) != null)
+        {
+            content = args.getString(0);
+        }
+
+        if (SHOWPROGRESS.equals(action))
+        {
+
+            showProgerss();
+            return true;
+        }
+        else if (CLOSEPROGRESS.equals(action))
+        {
+            closeProgress();
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+    }
 
 
 　　　这里action 参数是指要执行的方法名，
 　　　args 是在JS中传递过来的字符品参数数组
 　　　showProgerss()和 closeProgress();是我们根据action 要选择执行的方法
+
+    private void closeProgress()
+    {
+        if (dialog.isShowing())
+        {
+            dialog.dismiss();
+
+        }
+    }
+
+    private void showProgerss()
+    {
+        if (dialog==null)
+        {
+            dialog = ProgressDialog.createDialog(this.cordova.getActivity());
+        }
+
+        dialog.setMessage(content);
+        if (!dialog.isShowing())
+        {
+            dialog.show();
+
+        }
+
+    }
 　　　
 
 
@@ -54,26 +112,57 @@ Cordova 会创建一个带CordovaLib （Library项目） 的 Android 项目，�
 
 
 
+----------
+
 ### 第二步编写js代码 ###
 
 #### 1用前端编辑工具打开刚才创建的Cordova项目， 我这里是用的WebStorm 目录结构如下： ####
 
-
+![](https://github.com/longtaoge/CordovaPluginsDome/blob/master/cordova_image/cordovaplgin4.png)
 
 
 #### 2新建文件夹，并相要用到的文件放到相应的文件夹下 ####
 
+![](https://github.com/longtaoge/CordovaPluginsDome/blob/master/cordova_image/cordovaplgin5.png)
 
 #### 3在www 文件夹下新建js 文件 ####
 
 
+    /TODO 导入依赖库
+    var exec = require('cordova/exec');
+    var platform = require('cordova/platform');
+
+    module.exports = {
+    // TODO JS 中调用的 js方法，参数列表可根据业务需求定
+    showdalog: function (message) {
+
+        //TODO 第三个参数为 参数（回调方法,null,类名，方法名，[参数1，参数2，……]）
+        exec(null,null, "ProgressDialogPlugin", "show", [message]);
+
+    },
+
+    closedalog: function () {
+
+        //TODO 第三个参数为 参数（回调方法,null,类名，方法名，[参数1，参数2，……]）
+        exec(null,null, "ProgressDialogPlugin", "close", []);
+
+    }
+    }
+
+
+
 js 文件必须改入相应的依赖模块，并且重写
 
- exec(<successFunction>, <failFunction>, <service>, <action>, [<args>])方法
+     exec(<successFunction>, <failFunction>, <service>, <action>, [<args>])方法
+
+----------
 
 ### 第三步配置plugin.xml ###
 
   Plugin.xml文件是Cordova 识别插件时最重要的文件，会根据这个文件生成Android 项目的源代码，如果这一步出现差错，前面所的有工作将前功尽弃。
+
+
+![](https://github.com/longtaoge/CordovaPluginsDome/blob/master/cordova_image/cordovaplgin6.png)
 
 #### 参数说明 ####
 
@@ -138,6 +227,4 @@ js 文件必须改入相应的依赖模块，并且重写
         <source-file src="src/android/customprogressdialog.xml" target-dir="res/layout"/>
     </platform>
 </plugin>
-
-
 
