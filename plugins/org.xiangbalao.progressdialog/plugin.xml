@@ -34,9 +34,6 @@
         <source-file src="src/android/styles.xml" target-dir="res/values"/>
         <source-file src="src/android/progress_round2.xml" target-dir="res/anim"/>
         <source-file src="src/android/customprogressdialog.xml" target-dir="res/layout"/>
-
     </platform>
-
-
 </plugin>
 
