@@ -25,7 +25,7 @@
                 <param name="android-package" value="com.toast.toast.ToastPlugin"/>
             </feature>
         </config-file>
-        <!--TODO Java 本地代码映射，由两部分组成，前面是在插件文件中的路径，后面是将要生成的JAVA源码的包路径名，src +插件的包名com.toast.toast -->
+        <!--TODO Java 本地代码映射，由两部分组成，前面是在插件文件中的路径，后面是将要生成的JAVA源码的包路径名，src +插件的包名com.toast.toast  就是要把这些文件放到哪个目录下 -->
         <source-file src="src/android/ToastPlugin.java" target-dir="src/com/toast/toast"/>
     </platform>
 

@@ -1,9 +1,3 @@
-# CordovaPluginsDome
-CordovaPluginsDome
-![](https://github.com/longtaoge/CordovaPluginsDome/blob/master/www/codova_plugin.gif)
-
-
-
 ## 自定义Cordova插件 ##
 
 ### 第一步编写JAVA代码 ###
@@ -28,7 +22,7 @@ Cordova 会创建一个带CordovaLib （Library项目） 的 Android 项目，�
 #### 2将项目导入eclispe 得到两个工程，展开工程目录如下： ####
 
 
-其中，第一个工程MainActivity-CordovaLib就是我们要用的Library
+其中，第一个工程MainActivity-CordovaLib就是我们要用的Library 
 第二个工程plugins 是一个依赖MainActivity-CordovaLib 的Android 项目
 
 #### 3编写Android平台的 JAVA代码插件 ####
@@ -69,7 +63,7 @@ Cordova 会创建一个带CordovaLib （Library项目） 的 Android 项目，�
 
 js 文件必须改入相应的依赖模块，并且重写
 
- exec(<successFunction>, <failFunction>, <service>, <action>, [<args>])方法
+ exec(<successFunction>, <failFunction>, <service>, <action>, [<args>])方法  
 
 ### 第三步配置plugin.xml ###
 
@@ -79,27 +73,27 @@ js 文件必须改入相应的依赖模块，并且重写
 
       Id="org.xiangbalao.progressdialog"  插件ID, cordova 将根据 ID生成 plugins 下的目录结构
     <name>						插件名
-    <description> 					插件描述
-    <author>						作者
-    <keywords> 					关键字
-    <license>	  					许可协议
+    <description> 					插件描述   
+    <author>						作者  
+    <keywords> 					关键字 
+    <license>	  					许可协议 
     <engine >  						支持的引擎及版本号
     <platform name="android">  		android 平台的配置
      <js-module>					//指定JS路径
      <merges target="xiangbalao" />  		这里是在JS中调该插件的前缀
-
+     
     <feature name="ProgressDialogPlugin">     插件名
      <param name="android-package" 					value="org.xiangbalao.progressdialog.ProgressDialogPlugin"/>  插件的完整类路径 </feature>
-
+   
      Java 本地代码映射，由两部分组成，前面是在插件文件中的路径，后面是将要生成的JAVA源码的包路径名，就是要把这些文件放到哪个目录下
     <source-file src="src/android/ProgressDialogPlugin.java"    插件中的目录 target-dir="src/org/xiangbalao/progressdialog"/>     // 将要生成的Android 源码中的存放目录
-
+     
 
 
 
 #### 举例 ####
 
-
+  
      <?xml version="1.0" encoding="UTF-8"?>
      <plugin
         xmlns="http://apache.org/cordova/ns/plugins/1.0"
@@ -138,6 +132,4 @@ js 文件必须改入相应的依赖模块，并且重写
         <source-file src="src/android/customprogressdialog.xml" target-dir="res/layout"/>
     </platform>
 </plugin>
-
-
 

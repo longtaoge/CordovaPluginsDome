@@ -26,7 +26,7 @@
                 <param name="android-package" value="org.xiangbalao.progressdialog.ProgressDialogPlugin"/>
             </feature>
         </config-file>
-        <!--TODO Java 本地代码映射，由两部分组成，前面是在插件文件中的路径，后面是将要生成的JAVA源码的包路径名，src +插件的包名com.toast.toast -->
+        <!--TODO Java 本地代码映射，由两部分组成，前面是在插件文件中的路径，就是要把这些文件放到哪个目录下 -->
         <source-file src="src/android/ProgressDialogPlugin.java" target-dir="src/org/xiangbalao/progressdialog"/>
         <source-file src="src/android/ProgressDialog.java" target-dir="src/org/xiangbalao/progressdialog"/>
         <source-file src="src/android/pageload_icon1.png" target-dir="res/drawable-hdpi"/>

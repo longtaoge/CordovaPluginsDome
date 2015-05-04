@@ -26,27 +26,9 @@
                 <param name="android-package" value="org.apache.cordova.plugs.Echo"/>
             </feature>
         </config-file>
-        <!--TODO Java 本地代码映射，由两部分组成，前面是在插件文件中的路径，后面是将要生成的JAVA源码的包路径名，src +插件的包名com.toast.toast -->
+        <!--TODO Java 本地代码映射，由两部分组成，前面是在插件文件中的路径，就是要把这些文件放到哪个目录下 -->
         <source-file src="src/android/Echo.java" target-dir="src/org/apache/cordova/plugs"/>
     </platform>
 
-
-
-
-    <js-module src="www/echo.js" name="echo">
-        <merges target="navigator.notification" />
-    </js-module>
-    <!-- android -->
-    <platform name="android">
-        <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="Echo">
-                <param name="android-package" value="org.apache.cordova.plugs.Echo" />
-            </feature>
-        </config-file>
-        <js-module src="www/echo.js" name="echo">
-            <clobbers target="navigator.notification"/>
-        </js-module>
-        <source-file src="src/android/Echo.java" target-dir="src/android/"/>
-    </platform>
 </plugin>
 
