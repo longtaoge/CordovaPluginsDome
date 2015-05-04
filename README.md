@@ -1,10 +1,13 @@
 # CordovaPluginsDome
 CordovaPluginsDome
+
 ![](https://github.com/longtaoge/CordovaPluginsDome/blob/master/www/codova_plugin.gif)
 
 
-
 ## 自定义Cordova插件 ##
+
+#### 项目源码地址： ####
+[https://github.com/longtaoge/CordovaPluginsDome/tree/master](https://github.com/longtaoge/CordovaPluginsDome/tree/master "项目源码地址")
 
 ### 第一步编写JAVA代码 ###
 
