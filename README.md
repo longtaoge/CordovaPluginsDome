@@ -34,7 +34,6 @@ Cordova 会创建一个带CordovaLib （Library项目） 的 Android 项目，�
 
 ![](https://github.com/longtaoge/CordovaPluginsDome/blob/master/cordova_image/cordovaplgin2.png)
 
-
    其中，第一个工程MainActivity-CordovaLib就是我们要用的Library
   第二个工程plugins 是一个依赖MainActivity-CordovaLib 的Android 项目
 
