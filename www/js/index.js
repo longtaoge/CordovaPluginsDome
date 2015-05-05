@@ -27,8 +27,6 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-
-
         alert= function () {
             //TODO 这里调用的是官方提供的对话框
             navigator.notification.alert(
@@ -45,7 +43,6 @@ var app = {
 
         plugtest2=function(){
             echo.echo("测试","插件","信息");
-
 
         };
 
