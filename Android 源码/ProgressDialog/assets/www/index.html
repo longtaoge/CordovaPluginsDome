@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="css/ionic.css"/>
+    <title>Cordova自定义插件示例</title>
+</head>
+<body>
+<div>
+
+    <div class="bar bar-header  bar-positive">
+        <h1 class="title" style="font-size:30px">Cordova自定义插件示例</h1>
+    </div>
+    <div class="row " style="margin-top: 30px">
+    </div>
+    <div class="row" id="deviceready" style="margin-top: 20px;">
+        <div class="col" style="margin-left: 20px;margin-right: 20px">
+            <button class="button button-full button-calm"style="font-size:25px" onclick="alert()" >
+                官方插件测试
+            </button>
+            <button class="button button-full button-balanced" style="font-size:25px" onclick="plugtest2()">
+                官方插件示例吐丝
+            </button>
+            <button class="button button-full button-energized " style="font-size:25px"onclick="plugtest()">
+                自定义吐丝插件测试
+            </button>
+            <button class="button button-full button-balanced" style="font-size:25px"onclick="showprogress_dialog()">
+
+                打开自定义进度控件
+            </button>
+            <button class="button button-full button-assertive" style="font-size:25px"onclick="close_dalog()">
+                关闭自定义进度控件
+            </button>
+            <button class="button button-full button-royal">
+            </button>
+            <button class="button button-full button-dark">
+            </button>
+
+        </div>
+
+    </div>
+
+
+</div>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

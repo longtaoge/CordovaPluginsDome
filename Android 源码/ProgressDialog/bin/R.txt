@@ -13,9 +13,12 @@ int drawable progress_5 0x7f020007
 int drawable progress_6 0x7f020008
 int drawable progress_7 0x7f020009
 int drawable progress_8 0x7f02000a
-int id button1 0x7f080000
-int id id_tv_loadingmsg 0x7f080002
-int id loadingImageView 0x7f080001
+int id button1 0x7f080001
+int id button2 0x7f080002
+int id buttons 0x7f080000
+int id id_tv_loadingmsg 0x7f080005
+int id loadingImageView 0x7f080004
+int id mywebview 0x7f080003
 int layout activity_main 0x7f030000
 int layout customprogressdialog 0x7f030001
 int string action_settings 0x7f060002
