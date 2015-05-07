@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="org.xiangbalao.activityplugin"
+        version="0.3.0">
+    <!--TODO 域名空间，插件ID,版本号 cordova 将根据 ID生成 plugins 下的目录结构 -->
+    <name>Activity</name><!--插件名-->
+    <description>启动新页面</description><!--插件描述-->
+    <author>longtaoge</author><!--作者-->
+    <keywords>activity</keywords><!--关键字-->
+    <license>Apache 2.0 License</license><!--许可协议-->
+    <engines>
+        <engine name="cordova" version=">=3.0"/>
+        <!--支持的引擎及版本号-->
+    </engines>
+    <!-- TODO android 平台的配置-->
+    <platform name="android">
+        <js-module src="www/activityplugin.js" name="activityplugin">
+            <!--TODO  这里是在JS中调该插件的前缀-->
+            <merges target="xiangbalao" />
+        </js-module>
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="ActivityPlugin">
+                <!--TODO 插件的完整类路径-->
+                <param name="android-package" value="org.xiangbalao.activityplugin.ActivityPlugin"/>
+            </feature>
+        </config-file>
+        <!--TODO Java 本地代码映射，由两部分组成，前面是在插件文件中的路径（源目录），后面是目标目录，就是要把这些文件放到哪个目录下 -->
+        <source-file src="src/android/ActivityPlugin.java" target-dir="src/org/xiangbalao/activityplugin"/>
+       <source-file src="src/android/activity_secend.xml" target-dir="res/layout"/>
+     <source-file src="src/android/SecondActivity.java" target-dir="src/org/xiangbalao"/>
+
+    </platform>
+</plugin>
+

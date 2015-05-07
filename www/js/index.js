@@ -58,14 +58,11 @@ var app = {
             xiangbalao.closedalog();
 
         };
-
-
+        //TODO 调用
         start_activity=function(classname){
-            alert(classname);
-         //   xiangbalao1.startActivity(classname);
+            xiangbalao.startActivity(classname);
 
         };
-
 
     },
     // deviceready Event Handl
