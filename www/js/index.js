@@ -27,10 +27,11 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-        alert= function () {
+        alert= function (message) {
+
             //TODO 这里调用的是官方提供的对话框
             navigator.notification.alert(
-                '这是一个对话框',  // message
+                message==null?"这里是提示信息":message,  // message
                 null,         // callback
                 '对话框',            // title
                 '确认'                  // buttonName
@@ -53,11 +54,17 @@ var app = {
         };
 
         close_dalog=function(){
-
+             alert('test');
             xiangbalao.closedalog();
 
         };
 
+
+        start_activity=function(classname){
+            alert(classname);
+         //   xiangbalao1.startActivity(classname);
+
+        };
 
 
     },

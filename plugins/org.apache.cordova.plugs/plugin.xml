@@ -26,7 +26,7 @@
                 <param name="android-package" value="org.apache.cordova.plugs.Echo"/>
             </feature>
         </config-file>
-        <!--TODO Java 本地代码映射，由两部分组成，前面是在插件文件中的路径，就是要把这些文件放到哪个目录下 -->
+        <!--TODO Java 本地代码映射，由两部分组成，前面是在插件文件中的路径（源目录），后面是目标目录，就是要把这些文件放到哪个目录下 -->
         <source-file src="src/android/Echo.java" target-dir="src/org/apache/cordova/plugs"/>
     </platform>
 
