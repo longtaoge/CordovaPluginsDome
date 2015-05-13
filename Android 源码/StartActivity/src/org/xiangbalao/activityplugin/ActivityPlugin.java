@@ -4,7 +4,7 @@ import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.json.JSONArray;
 import org.json.JSONException;
-
+import android.widget.Toast;
 import android.content.Intent;
 
 public class ActivityPlugin extends CordovaPlugin
@@ -13,13 +13,15 @@ public class ActivityPlugin extends CordovaPlugin
     //要启动的Activity
     private String className;
     //方法类型
-    private  String START;
-    
+    private  String START= "startActivity";
+
+    //方法类型
+    private  String STARTAPP= "startApp";
     public ActivityPlugin()
     {//必须有无参构造
         
     }
-   
+
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext)
         throws JSONException
@@ -32,7 +34,15 @@ public class ActivityPlugin extends CordovaPlugin
         
         if (START.equals(action))
         {//根据 action选择要执行的方法，action 是从Js中传递过来的 方法名参数
+       // Toast.makeText(this.cordova.getActivity(), className,0).show();
+             startActivity(className);
+            return true;
+        }
+        
+        if (STARTAPP.equals(action))
+        {
             
+            startApp(className);
             return true;
         }
       
@@ -40,12 +50,31 @@ public class ActivityPlugin extends CordovaPlugin
         {
             return false;
         }
-        
-       
+
     }
     
-    public void startActivity(String className) {
+    /**
+     * 
+     * 描述: 开启其他应用的Activity  </br>
+     * 开发人员：longtaoge</br>
+     * 创建时间：2015-5-13</br>
+     * @param className2
+     */
+    private void startApp(String className)
+    {
+        Intent intent= new Intent(className); 
+        this.cordova.getActivity().startActivity(intent);
         
+    }
+
+    /** 
+     * 描述:开启新的Activity</br>
+     * 开发人员：longtaoge</br>
+     * 创建时间：2015-5-13</br>
+     * @param className
+     */ 
+    public void startActivity(String className) {
+
         if (className!=null)
         {
             try {
