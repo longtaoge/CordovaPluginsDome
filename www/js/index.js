@@ -38,21 +38,22 @@ var app = {
             );
         };
 
-        plugtest=function(){
+        plugtest=function(){ //吐丝插件
             window.plugins.ShowToast("自定义吐丝插件",1);
         };
 
-        plugtest2=function(){
+        plugtest2=function(){ //吐丝插件
             echo.echo("测试","插件","信息");
 
         };
 
+        //TODO 打开进度框
         showprogress_dialog=function(){
 
             xiangbalao.showdalog("正在加载数据...");
 
         };
-
+        //TODO 关闭进度框
         close_dalog=function(){
              alert('test');
             xiangbalao.closedalog();
@@ -61,6 +62,11 @@ var app = {
         //TODO 调用
         start_activity=function(classname){
             xiangbalao.startActivity(classname);
+
+        };
+
+        start_APP=function(classname){
+            xiangbalao.startApp(classname);
 
         };
 
